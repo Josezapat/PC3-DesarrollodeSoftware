@@ -1,7 +1,20 @@
-<!--  This file is app/views/movies/index.html.erb -->
+<!-- This file is app/views/movies/index.html.erb -->
 <h2>All Movies</h2>
 
-<%#  Part 1: Start here... %>
+<%= form_tag movies_path, method: :get, id: 'ratings_form' do %>
+  <% @all_ratings.each do |rating| %>
+    <div class="form-check form-check-inline">
+      <%= label_tag "ratings[#{rating}]", rating, class: 'form-check-label' %>
+      <%= check_box_tag "ratings[#{rating}]", "1", @selected_ratings.include?(rating), class: 'form-check-input', id: "ratings_#{rating}" %>
+    </div>
+  <% end %>
+
+  <!-- Eliminamos el botón "Refresh Page" -->
+  <!-- <%= button_tag 'Refresh Page', id: 'refresh_button', class: 'btn btn-secondary' %> -->
+
+  <!-- Agregamos el botón "Refresh Page" -->
+  <%= submit_tag 'Refresh Page', id: 'ratings_submit', class: 'btn btn-primary' %>
+<% end %>
 
 <table class="table table-striped col-md-12" id="movies">
   <thead>
@@ -32,3 +45,16 @@
   </tbody>
 </table>
 <%= link_to 'Add new movie', new_movie_path, :class => 'btn btn-primary' %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Eliminamos el bloque de código que recargaba la página
+    // document.getElementById('refresh_button').addEventListener('click', function() {
+    //   location.reload(true);
+    // });
+  });
+</script>
+
+
+
+
