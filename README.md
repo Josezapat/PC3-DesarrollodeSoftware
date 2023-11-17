@@ -8,6 +8,7 @@ Integrantes:
 # Introducción
 Creamos la Base de Datos:
 $ bin/rake db:migrate
+![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/b1222a2f-76d0-44a3-85d5-d956ebbeea05)
 
 
 - Pregunta 1: ¿Cómo decide Rails dónde y cómo crear la base de datos de desarrollo? 
@@ -21,6 +22,15 @@ Las migraciones pueden encontrarse en el directorio db/migrate y contienen instr
 - Pregunta 3: ¿Qué datos de semilla se insertaron y dónde se especificaron?  
 
 Los datos de semilla se especifican en el archivo db/seeds.rb. Se puede examinar ese archivo para ver qué datos se insertaron. 
+
+![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/f9b20770-2444-470f-b1b3-6cdd3a1d4c2c)
+
+Ejecutamos rails server 
+
+Y nos dirigimos a localhost 3000 
+
+![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/a73f79ab-93f4-4d9f-8a57-9cd885e0de9f)
+
 ***
 # Parte 1
 
@@ -94,10 +104,15 @@ end
 
 Ejecutamos Rails Server y obtenemos los resultados
 
+![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/055d9938-8688-436c-b23f-e8f95540664b)
+
 Podemos añadir una nueva película 
+
+![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/3a881a42-aae3-4019-afa5-45fe46f14f9e)
 
 La película ha sido añadida 
 
+![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/8ad28af1-99a2-493a-8f27-e8b4aaab1346)
 
 - Pregunta: ¿Por qué el controlador debe configurar un valor predeterminado para @ratings_to_show incluso si no se marca nada?
 
@@ -131,6 +146,8 @@ end
 ```
 Ahora, @movies contendrá solo las películas que coinciden con las clasificaciones seleccionadas.
 
+Por último subimos los cambios hechos a neustra rama: Josezapat:
+![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/1fa5f383-2dd5-42d5-9353-73852cb87f50)
 
 ***
 # Parte 2
