@@ -2,7 +2,7 @@
 
 Integrantes:
 - José Daniel Zapata Ancco / 20202230A
--
+- Omar Baldomero Vite Allca / 20200479B
 - 
 ***
 # Introducción
