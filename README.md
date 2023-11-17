@@ -3,7 +3,7 @@
 Integrantes:
 - José Daniel Zapata Ancco / 20202230A
 - Omar Baldomero Vite Allca / 20200479B
-- 
+- Ureta Espinal Daniel Antonio / 20154033K
 ***
 # Introducción
 Creamos la Base de Datos:
