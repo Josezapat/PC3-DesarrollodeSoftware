@@ -10,7 +10,6 @@ Creamos la Base de Datos:
 $ bin/rake db:migrate
 ![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/b1222a2f-76d0-44a3-85d5-d956ebbeea05)
 
-
 - Pregunta 1: ¿Cómo decide Rails dónde y cómo crear la base de datos de desarrollo? 
 
  Rails utiliza los archivos en los subdirectorios db y config para configurar y migrar la base de datos de desarrollo. El archivo config/database.yml especifica la configuración de la base de datos. 
@@ -23,7 +22,6 @@ Las migraciones pueden encontrarse en el directorio db/migrate y contienen instr
 
 Los datos de semilla se especifican en el archivo db/seeds.rb. Se puede examinar ese archivo para ver qué datos se insertaron. 
 
-![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/f9b20770-2444-470f-b1b3-6cdd3a1d4c2c)
 
 Ejecutamos rails server 
 
@@ -33,7 +31,7 @@ Y nos dirigimos a localhost 3000
 
 ***
 # Parte 1
-
+(José Daniel Zapata Ancco)
 Modificamos el archivo Movies_controller.rb
 ```ruby
 class MoviesController < ApplicationController
@@ -146,7 +144,7 @@ end
 ```
 Ahora, @movies contendrá solo las películas que coinciden con las clasificaciones seleccionadas.
 
-Por último subimos los cambios hechos a neustra rama: Josezapat:
+Por último subimos los cambios hechos a nuestra rama: Josezapat:
 ![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/90808325/1fa5f383-2dd5-42d5-9353-73852cb87f50)
 
 ***
