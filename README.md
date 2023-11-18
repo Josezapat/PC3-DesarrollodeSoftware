@@ -149,7 +149,7 @@ Por último subimos los cambios hechos a nuestra rama: Josezapat:
 
 ***
 # Parte 2
-***
+Prueba
 # Parte 3
 
 ....
