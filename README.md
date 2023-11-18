@@ -149,7 +149,70 @@ Por último subimos los cambios hechos a nuestra rama: Josezapat:
 
 ***
 # Parte 2
-Prueba
+
+Para ordenar las columnas de acuerdo a su nombre y a su fecha de lanzamiento primero modificaremos el controlador añadiendo la siguiente función:
+
+```Ruby
+if params[:sort_column] == 'title'
+      @movies = @movies.order(:title)
+    elsif params[:sort_column] == 'release_date'
+      @movies = @movies.order(:release_date)
+end
+```
+Una vez hecho esto modificamos el index.html.erb para que reciba estos parametros así como tmambién le añadimos el id para cambiar el color de fondo cada que le hagamos click
+
+```erb
+<thead>
+    <tr>
+      <th id="title_link"><%= link_to "Movie Title", movies_path(sort_column: 'title', ratings: @selected_ratings) %></th>
+      <th>Rating</th>
+      <th id="release_date_link" ><%= link_to "Release Date", movies_path(sort_column: 'release_date', ratings: @selected_ratings)%></th>
+      <th>More Info</th>
+    </tr>
+</thead>
+```
+
+Por último usamos js para añadir clases dinámicamente, es decir cambiar el color de fondo usando bootstrap
+```Js
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('title_link').addEventListener('click', function() {
+      toggleBackgroundColor('title_link');
+    });
+
+    document.getElementById('release_date_link').addEventListener('click', function() {
+      toggleBackgroundColor('release_date_link');
+    });
+
+    function toggleBackgroundColor(elementId) {
+      var element = document.getElementById(elementId);
+      element.classList.toggle('bg-warning');
+    } 
+  });
+```
+
+Ahora para poder actualizar nuestra página con los filtros seleccionados primero modificamos el método with_ratings
+
+```RUby
+def self.with_ratings(ratings)
+    where(rating: ratings)
+end
+```
+
+Así como también le pasamos los parámetros correctos para que funcione sin problemas
+
+```RUby
+def index
+    @movies = Movie.with_ratings(@selected_ratings.keys)
+
+    if params[:sort_column] == 'title'
+      @movies = @movies.order(:title)
+    elsif params[:sort_column] == 'release_date'
+      @movies = @movies.order(:release_date)
+    end
+end
+```
+
+
 # Parte 3
 
 ....

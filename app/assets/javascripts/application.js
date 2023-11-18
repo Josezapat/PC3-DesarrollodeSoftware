@@ -13,3 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var titleLink = document.getElementById('title_link');
+    var releaseDateLink = document.getElementById('release_date_link');
+  
+    titleLink.addEventListener('click', function() {
+      toggleBackgroundColor(titleLink);
+    });
+  
+    releaseDateLink.addEventListener('click', function() {
+      toggleBackgroundColor(releaseDateLink);
+    });
+  
+    function toggleBackgroundColor(element) {
+      element.classList.toggle('bg-warning');
+    }
+});
