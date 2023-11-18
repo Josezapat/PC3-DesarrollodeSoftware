@@ -6,7 +6,13 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.with_ratings(@selected_ratings)
+    @movies = Movie.with_ratings(@selected_ratings.keys)
+
+    if params[:sort_column] == 'title'
+      @movies = @movies.order(:title)
+    elsif params[:sort_column] == 'release_date'
+      @movies = @movies.order(:release_date)
+    end
   end
 
   def new
@@ -43,6 +49,10 @@ class MoviesController < ApplicationController
     @all_ratings = Movie.all_ratings
     @selected_ratings = params[:ratings] || session[:ratings] || @all_ratings
     session[:ratings] = @selected_ratings
+  end
+
+  def self.with_ratings(ratings)
+    where(rating: ratings)
   end
 
   def movie_params
