@@ -12,11 +12,12 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'sassc'
 gem 'themoviedb'
+gem 'rake', '13.1.0'
+
 
 # Window support
 gem 'tzinfo'
