@@ -14,7 +14,7 @@ gem 'jquery-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-gem 'sassc'
+
 gem 'themoviedb'
 gem 'rake', '13.1.0'
 
