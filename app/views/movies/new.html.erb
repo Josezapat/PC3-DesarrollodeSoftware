@@ -1,13 +1,13 @@
-<h2>Create New Movie</h2>
+<h2 class="mb-4">Create New Movie</h2>
 
 <%= form_tag movies_path, :class => 'form' do %>
   <%= label :movie, :title, 'Title', :class => 'col-form-label' %>
-  <%= text_field :movie, :title, :class => 'form-control' %>
+  <%= text_field :movie, :title, :class => 'form-control mb-2' %>
   <%= label :movie, :rating, 'Rating', :class => 'col-form-label'  %>
-  <%= select :movie, :rating, ['G','PG','PG-13','R','NC-17'], {}, {:class => 'form-control col-1'} %>
-  <%= label :movie, :release_date, 'Released On', :class => 'col-form-label'  %>
-  <%= date_select :movie, :release_date, {}, :class => 'form-control col-2 d-inline' %>
+  <%= select :movie, :rating, ['G','PG','PG-13','R','NC-17'], {}, {:class => 'form-control col-1 mb-4'} %>
+  <%= label :movie, :release_date, 'Released on', :class => 'col-form-label mr-4'  %>
+  <%= date_select :movie, :release_date, {}, :class => 'form-control col-2 mb-5 d-inline' %>
   <br/>
-  <%= submit_tag 'Save Changes', :class => 'btn btn-primary' %>
+  <%= submit_tag 'Save Changes', :class => 'btn btn-info' %>
   <%= link_to 'Cancel', movies_path, :class => 'btn btn-secondary' %>
 <% end %>
