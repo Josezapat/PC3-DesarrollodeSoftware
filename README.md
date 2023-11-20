@@ -244,11 +244,11 @@ end
 - `if params[:sort_column]`: Verifica si hay un parámetro `sort_column` en la solicitud. Este parámetro indica la columna por la cual se debe ordenar las películas (por ejemplo, 'title' o 'release_date').
 - `session[:sort_column] = params[:sort_column]`: Si se proporciona un parámetro `sort_column`, se guarda en la sesión para recordar la preferencia de ordenación del usuario.
 - `params[:sort_column] = session[:sort_column]`: Si no se proporciona un parámetro de ordenación, intenta recuperar la preferencia de ordenación de la sesión.
-- `apply_sorting_and_filtering`: Llama a un método privado para aplicar la clasificación y filtrado a `@movies`.
+- `apply_sorting_and_filtering`: Llama a un método privado para aplicar la clasificación y filtrado a `@movies`, aquí se le pasa el parámetro @selected_ratings para que se pueda filtrar conforme a los valores la variable.
 
 ### Acción set_ratings
 - **Función**: Establecer las calificaciones de películas seleccionadas para filtrar.
-- **Detalles**: Gestiona la selección de calificaciones tanto desde los parámetros como desde la sesión.
+- **Detalles**: Gestiona la selección de calificaciones tanto desde los parámetros como desde la sesión, esta función se llama justo antes de index.
 #### Código Relevante
 ```ruby
 def set_ratings
@@ -272,8 +272,8 @@ def set_ratings
 
 - `@all_ratings = Movie.all_ratings`: Obtiene todas las posibles calificaciones de películas.
 - `if params[:ratings]`: Verifica si se han proporcionado calificaciones específicas a través de los parámetros. Si es así, los almacena en `@selected_ratings` y en la sesión.
-- `elsif params[:commit] == "Refresh Page" && params[:ratings].blank?`: Si el usuario actualizó la página sin seleccionar ninguna calificación, selecciona todas las calificaciones disponibles.
-- `elsif session[:ratings]`: Si no se han proporcionado parámetros de calificación, pero hay calificaciones almacenadas en la sesión, las carga.
+- `elsif params[:commit] == "Refresh Page" && params[:ratings].blank?`: Si el usuario actualizó las peliculas desde el boton 'Refresh' sin seleccionar ninguna calificación, selecciona todas las calificaciones disponibles.
+- `elsif session[:ratings]`: Si no se han proporcionado parámetros de calificación, pero hay calificaciones almacenadas en la sesión, las carga; esto es util cuando vuelve de otra página de la aplicación y no se pierdan los filtros.
 - `else`: Si no hay calificaciones seleccionadas ni en los parámetros ni en la sesión, selecciona todas las calificaciones por defecto.
 
 
@@ -283,7 +283,8 @@ def set_ratings
 
 
 ## Despliegue en render:
-[Desarrollo de Software - PC3](https://pc3-desarrollosoftware.onrender.com/)
+[https://pc3-desarrollosoftware.onrender.com](https://pc3-desarrollosoftware.onrender.com/)
+
 
 ![image](https://github.com/Daniel349167/PC3-DesarrollodeSoftware/assets/62466867/4b11d06c-71fb-43ec-a4b1-f91cb35c39a6)
 
