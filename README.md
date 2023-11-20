@@ -1,5 +1,8 @@
 # Práctica Calificada N°3
 
+(Este repositorio es un fork desde el repositorio principal en donde trabajamos en conjunto yo y mis compañeros ahí podrá ver las 4 ramas que son: vite / daniel / Josezapt / master)
+adjunto el enlace a ese repositorio: https://github.com/Daniel349167/PC3-DesarrollodeSoftware
+
 Integrantes:
 - José Daniel Zapata Ancco / 20202230A
 - Omar Baldomero Vite Allca / 20200479B
